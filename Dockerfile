@@ -10,6 +10,8 @@ RUN pnpm install --prod
 
 COPY . .
 
+COPY README.md ./README.md
+
 EXPOSE 8080
 
 CMD ["node", "src/app.js"]

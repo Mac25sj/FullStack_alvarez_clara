@@ -1,14 +1,14 @@
 Claro que sí, Matías 🙌. Lo que querés armar es un README.md para tu proyecto final, con una estructura clara y profesional. Te dejo un ejemplo adaptado a tu caso (con tu nombre y tu stack):
 
-📂 README.md
+README.md
 # Proyecto Final Backend III
 
-Este es el proyecto final del curso **Backend III de CoderHouse**, realizado por **Matías Álvarez**.  
+Este es el proyecto final del curso **Backend III de CoderHouse**, realizado por **Matías Álvarez Clara**.  
 Incluye una API desarrollada con **Node.js + Express**, con módulos de **usuarios, mascotas y adopciones**, documentada con **Swagger**, probada con **Mocha/Chai/Supertest** y contenerizada con **Docker**.
 
 ---
 
-## ✨ Características
+##  Características
 
 - **Módulo de Usuarios**: CRUD de usuarios con documentación Swagger.
 - **Módulo de Mascotas**: CRUD de mascotas con vistas en Handlebars.
@@ -19,11 +19,21 @@ Incluye una API desarrollada con **Node.js + Express**, con módulos de **usuari
 
 ---
 
-## ⚙️ Instalación
+#  Enlace DockerFIle
+https://hub.docker.com/repository/docker/mac25sj/backend_final_coderhouse_matias_alvarez/general
+
+
+#  Enlace Linkedin
+https://www.linkedin.com/in/mat%C3%ADas%C3%A1lvarezclara/
+
+#  Enlace Github
+https://github.com/Mac25sj/Entrega-1-Backend3_alvarez_clara.git
+
+##  Instalación
 
 Clona el repositorio:
 ```bash
-git clone <url-del-repositorio>
+git clone <https://github.com/Mac25sj/Entrega-1-Backend3_alvarez_clara>
 cd entrega-backend-iii
 npm install
 
