@@ -1,6 +1,3 @@
-Claro que sí, Matías 🙌. Lo que querés armar es un README.md para tu proyecto final, con una estructura clara y profesional. Te dejo un ejemplo adaptado a tu caso (con tu nombre y tu stack):
-
-README.md
 # Proyecto Final Backend III
 
 Este es el proyecto final del curso **Backend III de CoderHouse**, realizado por **Matías Álvarez Clara**.  
