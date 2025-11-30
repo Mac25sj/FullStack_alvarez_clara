@@ -4,7 +4,7 @@ Este es el proyecto final del curso **Backend III de CoderHouse**, realizado por
 Incluye una API desarrollada con **Node.js + Express**, con módulos de **usuarios, mascotas y adopciones**, documentada con **Swagger**, probada con **Mocha/Chai/Supertest** y contenerizada con **Docker**.
 
 ---
-
+⚠️⚠️Usar pnpm start
 ##  Características
 
 - **Módulo de Usuarios**: CRUD de usuarios con documentación Swagger.
@@ -86,8 +86,6 @@ Subir a DockerHub
 docker tag matiasalvarez/backend3-final:1.0.0 matiasalvarez/backend3
 docker push matiasalvarez/backend3
 
-
-(Reemplaza matiasalvarez con tu usuario de DockerHub si es diferente)
 
 Una vez que el contenedor esté ejecutándose en el puerto 8080:
 - Accede a la aplicación en http://localhost:8080
