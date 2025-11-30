@@ -1,0 +1,25 @@
+<div class="pet-card">
+  <h1>{{title}}</h1>
+
+  <div class="pet-info">
+    <div class="pet-image">
+      {{#if pet.image}}
+        <img src="{{pet.image}}" alt="Imagen de {{pet.name}}">
+      {{else}}
+        <div class="no-image">Sin imagen</div>
+      {{/if}}
+    </div>
+
+    <div class="pet-details">
+      <p><strong>🐾 Nombre:</strong> {{pet.name}}</p>
+      <p><strong>🦴 Especie:</strong> {{pet.specie}}</p>
+      <p><strong>🎂 Fecha de nacimiento:</strong> {{pet.birthDate}}</p>
+      <p><strong>🏠 Adoptado:</strong> {{#if pet.adopted}}<span class="yes">✅ Sí</span>{{else}}<span class="no">❌ No</span>{{/if}}</p>
+      <p><strong>👤 Dueño:</strong> {{#if pet.owner}}{{pet.owner}}{{else}}<em>Sin dueño</em>{{/if}}</p>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="/pets-view">⬅ Volver al listado</a>
+  </div>
+</div>

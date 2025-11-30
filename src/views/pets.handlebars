@@ -1,0 +1,46 @@
+<h1>{{title}}</h1>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Especie</th>
+      <th>Fecha de nacimiento</th>
+      <th>Adoptado</th>
+      <th>Dueño</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each pets}}
+      <tr>
+        <td>{{this._id}}</td>
+        <td>
+          <a href="/pets-view/{{this._id}}">
+            {{this.name}}
+          </a>
+        </td>
+        <td>{{this.specie}}</td>
+        <td>{{this.birthDate}}</td>
+        <td>{{#if this.adopted}}✅ Sí{{else}}❌ No{{/if}}</td>
+        <td>
+          {{#if this.owner}}
+            {{this.owner.first_name}} ({{this.owner.email}})
+          {{else}}
+            <em>Sin dueño</em>
+          {{/if}}
+        </td>
+        <td>
+          {{#if this.image}}
+            <a href="/pets-view/{{this._id}}">
+              <img src="{{this.image}}" alt="Imagen de {{this.name}}" width="80">
+            </a>
+          {{else}}
+            <em>Sin imagen</em>
+          {{/if}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

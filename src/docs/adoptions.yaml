@@ -1,0 +1,136 @@
+openapi: 3.0.0
+info:
+  title: AdoptMe API - Adoptions
+  version: 1.0.0
+  description: Endpoints para gestionar adopciones de mascotas por usuarios
+
+tags:
+  - name: Adoptions
+    description: Operaciones relacionadas con adopciones
+
+paths:
+  /api/adoptions:
+    get:
+      summary: Obtener todas las adopciones
+      tags: [Adoptions]
+      responses:
+        '200':
+          description: Lista de adopciones obtenida correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adoption'
+
+    post:
+      summary: Crear una nueva adopción
+      tags: [Adoptions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdoptionInput'
+      responses:
+        '201':
+          description: Adopción creada correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adoption'
+        '400':
+          description: Datos inválidos o mascota ya adoptada
+
+  /api/adoptions/{aid}:
+    get:
+      summary: Obtener una adopción por ID
+      tags: [Adoptions]
+      parameters:
+        - name: aid
+          in: path
+          required: true
+          description: ID de la adopción
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Adopción encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adoption'
+        '404':
+          description: Adopción no encontrada
+
+    delete:
+      summary: Eliminar una adopción por ID
+      tags: [Adoptions]
+      parameters:
+        - name: aid
+          in: path
+          required: true
+          description: ID de la adopción
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Adopción eliminada correctamente
+        '404':
+          description: Adopción no encontrada
+
+components:
+  schemas:
+    Adoption:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: ID único de la adopción
+        user:
+          $ref: '#/components/schemas/User'
+        pet:
+          $ref: '#/components/schemas/Pet'
+        date:
+          type: string
+          format: date-time
+          description: Fecha en la que se realizó la adopción
+
+    AdoptionInput:
+      type: object
+      properties:
+        userId:
+          type: string
+          description: ID del usuario que adopta
+        petId:
+          type: string
+          description: ID de la mascota que se adopta
+
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+
+    Pet:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        specie:
+          type: string
+        birthDate:
+          type: string
+          format: date
+        adopted:
+          type: boolean
+        image:
+          type: string
